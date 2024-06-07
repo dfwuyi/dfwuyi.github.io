@@ -1,203 +1,351 @@
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  Hexo+Next主题搭建个人博客+优化全过程 -    白银之手骑士团</title>
-  <meta name="description" content="Knights of the Silver Hand.">
-  <!-- 标签页图标 -->
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="dfwuyi">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前置内容 git 的下载： 官网下载较慢，这边推荐阿里镜像下载：  阿里镜像下载 git 往下滑选择接近当前日期的最新版本 2.39.2 windows  选择 2.39.2 -64 的exe下载，大概有 50Mb大小  下载好后，直接一直点下一步即可。如果你了解过git，则可以按照自己的习惯下载，这不重要。  Nodejs下载  直接百度搜索 Nodejs，Nodejs下载 选择 18.14.2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Next主题搭建个人博客+优化全过程">
+<meta property="og:url" content="http://dfwuyi.github.io/2024/06/07/Hexo-Next%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E4%BC%98%E5%8C%96%E5%85%A8%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:site_name" content="白银之手骑士团">
+<meta property="og:description" content="前置内容 git 的下载： 官网下载较慢，这边推荐阿里镜像下载：  阿里镜像下载 git 往下滑选择接近当前日期的最新版本 2.39.2 windows  选择 2.39.2 -64 的exe下载，大概有 50Mb大小  下载好后，直接一直点下一步即可。如果你了解过git，则可以按照自己的习惯下载，这不重要。  Nodejs下载  直接百度搜索 Nodejs，Nodejs下载 选择 18.14.2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-061ce91408a9818ac4dde6e06a193ba6_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-8798a5317da8066c99d588c48cdf76e5_720w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-48db9b9fe1aad61254649c5ec27ac35f_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-3c73360958e1c82e727b1a70eec68f85_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-8ab3068e99df23b127e4319b0c73f0f5_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-ffab2e053a3eb3afc27ff5476605dd51_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-0dab2eb2e39da4f792d4809e65390ab2_720w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-905e3bc4699e4ed28e7a070652ccd360_720w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-48344b04d00dea4f27afd9b1f43314a4_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-45a61b965539feb50686d89fb08e6686_720w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-8bd8a49694b4b0b636eecd7cb942a88b_720w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-d5f8952fd864c0c60ab3659cccbd3547_720w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-aaf05ae1946cfa9c15fdb58891b79700_720w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-31040a40d62a9a9e6a5b3837fded4d40_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-a5fe8792b42fb802eb4c22c31244d736_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-42fe8cdbafb3193f94bbc9141e0a851a_720w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-2a34de1052b80ceff94db874dca4fa0c_720w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-70a0224b42907b014a4abb4639046a8f_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-1d51028e79f3031ae4a259e807766f02_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-b055c28787ccb765b33d5f45fdbaca3a_720w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-4dfb2460f9868aa482c9685f46cbcc28_720w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-0ead38f8c03cc0cddc9d1b4c5c566a9f_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-af2521c853a03163dd59201003f82e2e_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-0bd18cb7097efe79d0539fe8555ba3e2_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-fb66802168300598aa2b8a49b009aeae_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-cdfbb807e2091b4bebcbc65435e1d575_720w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-2a62369e06f23d62cdfdc930c15e6938_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-75bd93dc2ebf1aef21ddbda5a8e75199_720w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-ab686a3a0a95f74645bebc70e7d517a4_720w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-c4e78830411dfbdab798328210ceaf3f_720w.webp">
+<meta property="article:published_time" content="2024-06-07T09:14:16.000Z">
+<meta property="article:modified_time" content="2024-06-07T09:47:10.936Z">
+<meta property="article:author" content="dfwuyi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pic3.zhimg.com/80/v2-061ce91408a9818ac4dde6e06a193ba6_720w.webp">
+  
+  
+  
+  <title>Hexo+Next主题搭建个人博客+优化全过程 - 白银之手骑士团</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
-  <!-- 图标库 -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 
-  <!-- css文件 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dfwuyi.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
-<link rel="stylesheet" href="/css/white.css">
 
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;700;900&family=Roboto+Mono&display=swap" rel="stylesheet">
-
+  
 <meta name="generator" content="Hexo 7.2.0"></head>
 
 
 <body>
+  
 
-<div class="menu-outer">
-    <div class="menu-inner">
-        <div class="menu-site-name">
-            <a href="/">
-                白银之手骑士团
-            </a>
-        </div>
-        <div class="menu-group">
-            <ul class="menu-ul">
-                
-                <a href="/" class="nav-link">
-                    <li class="menu-li">
-                        首页
-                    </li>
-                </a>
-                
-                <a href="/about" class="nav-link">
-                    <li class="menu-li">
-                        关于
-                    </li>
-                </a>
-                
-                <li class="menu-li" id="mobile-menu">
-                    <i class="ri-menu-line"></i>
-                </li>
-<!--                <li class="menu-li" id="theme-change-btn">-->
-<!--                    默认-->
-<!--                </li>-->
+  <header>
+    
 
-            </ul>
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
 
-        </div>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
 
-    </div>
-</div>
-<!--移动端-->
-<div id="mobile-main">
-    <div class="mobile-menu-inner">
-        <div class="mobile-menu-site-name">
-            <a href="/">
-                白银之手骑士团
-            </a>
-        </div>
-        <div class="mobile-menu-group" id="mobile-close">
-            <i class="ri-close-line"></i>
-        </div>
-
-    </div>
-
-    <div class="mobile-menu-div">
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-        <a href="/" class="mobile-nav-link">
-            <div class="mobile-menu-child">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
-            </div>
-        </a>
+              </a>
+            </li>
+          
         
-        <a href="/about" class="mobile-nav-link">
-            <div class="mobile-menu-child">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
-            </div>
-        </a>
+              </a>
+            </li>
+          
         
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
+  </div>
+</nav>
 
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Hexo+Next主题搭建个人博客+优化全过程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-06-07 17:14" pubdate>
+          2024年6月7日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
 
 </div>
 
-<div class="body-outer">
-  <div class="body-inner">
-    <article class="post-inner">
-  <div class="post-content-outer">
-    <div class="post-intro">
+  </header>
+
+  <main>
+    
       
-      <div class="post-title">
-        Hexo+Next主题搭建个人博客+优化全过程
-      </div>
-      <div class="post-meta">
-        <img src="https://cdn.jsdelivr.net/gh/dfwuyi/tuchuang/img/202406071645410.jpg">
-        <div class="post-meta-name">dfwuyi</div>
-        <div class="post-meta-date">发布于 2024/06/07</div>
-      </div>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
     </div>
-    <div class="post-content-inner common-typographic">
-      <div class="post-placeholder"></div>
-      <div class="post-content-main">
-        <div class="post-content">
-          <h2 id="前置内容"><a href="#前置内容" class="headerlink" title="前置内容"></a><strong>前置内容</strong></h2><ol>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Hexo+Next主题搭建个人博客+优化全过程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="前置内容"><a href="#前置内容" class="headerlink" title="前置内容"></a><strong>前置内容</strong></h2><ol>
 <li><strong>git 的下载</strong>： 官网下载较慢，这边推荐阿里镜像下载：</li>
 </ol>
 <p><a href="https://link.zhihu.com/?target=https://registry.npmmirror.com/binary.html?path=git-for-windows/">阿里镜像下载 git</a></p>
 <p>往下滑选择接近当前日期的最新版本 2.39.2 windows</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic3.zhimg.com/80/v2-061ce91408a9818ac4dde6e06a193ba6_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic3.zhimg.com/80/v2-061ce91408a9818ac4dde6e06a193ba6_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>选择 2.39.2 -64 的exe下载，大概有 50Mb大小</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic2.zhimg.com/80/v2-8798a5317da8066c99d588c48cdf76e5_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic2.zhimg.com/80/v2-8798a5317da8066c99d588c48cdf76e5_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>下载好后，直接<strong>一直点下一步即可</strong>。如果你了解过git，则可以按照自己的习惯下载，这不重要。</p>
 <ol>
 <li><strong>Nodejs下载</strong></li>
 </ol>
 <p>直接百度搜索 Nodejs，<a href="https://link.zhihu.com/?target=https://nodejs.org/en/">Nodejs下载</a></p>
 <p>选择 18.14.2 的 LTS版本下载</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic4.zhimg.com/80/v2-48db9b9fe1aad61254649c5ec27ac35f_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic4.zhimg.com/80/v2-48db9b9fe1aad61254649c5ec27ac35f_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <h2 id="hexo创建个人博客"><a href="#hexo创建个人博客" class="headerlink" title="hexo创建个人博客"></a><strong>hexo创建个人博客</strong></h2><p>hexo是什么？</p>
 <ul>
 <li>正如hexo的首页所显示的，它是一款非常快速，简介，高效的博客框架平台，我们可以利用hexo快速生成博客网站的模板，然后部署为我们自己的博客网站。</li>
 </ul>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic2.zhimg.com/80/v2-3c73360958e1c82e727b1a70eec68f85_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic2.zhimg.com/80/v2-3c73360958e1c82e727b1a70eec68f85_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>直接进入操作：</p>
 <ol>
 <li><strong>在任意盘符中新建 hexo 文件夹</strong>，这里我创建在了F盘</li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic2.zhimg.com/80/v2-8ab3068e99df23b127e4319b0c73f0f5_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic2.zhimg.com/80/v2-8ab3068e99df23b127e4319b0c73f0f5_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li><strong>打开hexo文件夹，空白的地方右键，选择 Git Bash Here</strong> ，即我们使用 git 环境创建 hexo的blog模板（必须提前安装好 git），打开后如下图所示：**&#x2F; f &#x2F; hexo表示当前操作位置在 F盘的 hexo文件夹中**</li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic2.zhimg.com/80/v2-ffab2e053a3eb3afc27ff5476605dd51_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic3.zhimg.com/80/v2-0dab2eb2e39da4f792d4809e65390ab2_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic2.zhimg.com/80/v2-ffab2e053a3eb3afc27ff5476605dd51_720w.webp" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://pic3.zhimg.com/80/v2-0dab2eb2e39da4f792d4809e65390ab2_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li><strong>在 git窗口中依次输入以下命令</strong></li>
 </ol>
 <!---->
 
-<pre><code>npm install hexo-cli -g
+<pre><code class="hljs">npm install hexo-cli -g
 hexo init blog
 cd blog
 npm install
 hexo server
 </code></pre>
 <p>全部输入完成后，hexo文件夹中便会生成一个 blog 子文件夹，并且blog文件夹里面包含有很多信息：</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic1.zhimg.com/80/v2-905e3bc4699e4ed28e7a070652ccd360_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic1.zhimg.com/80/v2-905e3bc4699e4ed28e7a070652ccd360_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>关于这些文件夹，做一个简单的介绍：</p>
 <ul>
 <li><p>node_modules: 依赖包</p>
@@ -212,84 +360,54 @@ hexo server
 </li>
 </ul>
 <p>然后输入这两条命令：</p>
-<pre><code>hexo g
+<pre><code class="hljs">hexo g
 hexo s
 </code></pre>
 <p>完成后会显示如下内容，则说明<strong>配置成功</strong>!</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic1.zhimg.com/80/v2-48344b04d00dea4f27afd9b1f43314a4_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic1.zhimg.com/80/v2-48344b04d00dea4f27afd9b1f43314a4_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>在 git 中输入 Ctrl+C 即可关闭hexo s的内容。</p>
 <p>打开浏览器，在浏览器输入 <strong>localhost:4000</strong> 即可进入你的<strong>初始默认博客</strong></p>
 <p>它长这样：</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic3.zhimg.com/80/v2-45a61b965539feb50686d89fb08e6686_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic3.zhimg.com/80/v2-45a61b965539feb50686d89fb08e6686_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>注意：这只是一个<strong>离线版本的博客</strong> ，只能你自己看见，因此我们还需要 GitHub或者 gittee提供的 ssh功能将他变为对外开放的。</p>
 <h2 id="GitHub创建仓库"><a href="#GitHub创建仓库" class="headerlink" title="GitHub创建仓库"></a><strong>GitHub创建仓库</strong></h2><ol>
 <li>首先注册一个GitHub的仓库，然后在<strong>个人主页中选择 new 新建仓库</strong></li>
 </ol>
 <p>注意： 仓库名称的<strong>前半部分与你的用户名一致</strong>，即 lummod，<strong>后半部分 为 .</strong><a href="https://link.zhihu.com/?target=http://git.io">http://git.io</a> 固定格式（忽略红色警告，因为我已经创建过了！），可以选择一个readme为说明文件（随便），然后<strong>点击创建仓库</strong></p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic4.zhimg.com/80/v2-8bd8a49694b4b0b636eecd7cb942a88b_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic4.zhimg.com/80/v2-8bd8a49694b4b0b636eecd7cb942a88b_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>回到 git bash黑窗口中，<strong>输入以下两个命令</strong>（逐条）：</li>
 </ol>
 <p>yourname改为你的<strong>GitHub的用户名</strong></p>
-<pre><code>git config --global user.name &quot;yourname&quot;
+<pre><code class="hljs">git config --global user.name &quot;yourname&quot;
 </code></pre>
 <p>youremail改为你的<strong>注册GitHub时的邮箱</strong></p>
-<pre><code>git config --global user.email &quot;youremail&quot;
+<pre><code class="hljs">git config --global user.email &quot;youremail&quot;
 </code></pre>
 <p>一定不要输入错，这样github才能检查到这个用户属于你</p>
 <ol>
 <li><strong>创建 ssh，输入命令，然后一直回车</strong></li>
 </ol>
 <p>youremail改为你的<strong>注册GitHub时的邮箱</strong></p>
-<pre><code>ssh-keygen -t rsa -C &quot;youremail&quot;
+<pre><code class="hljs">ssh-keygen -t rsa -C &quot;youremail&quot;
 </code></pre>
 <p>之后会提示你已完成 ssh的创建，在文件中找到这个路径</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic4.zhimg.com/80/v2-d5f8952fd864c0c60ab3659cccbd3547_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic4.zhimg.com/80/v2-d5f8952fd864c0c60ab3659cccbd3547_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>记住这两个文件</p>
 <ol>
 <li>在 GitHub的 Setting里面，找到 SSH keys，<strong>把 id_rsa.pub 里面的内容全部复制到 key 进去</strong>，title随便写一个就行</li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic1.zhimg.com/80/v2-aaf05ae1946cfa9c15fdb58891b79700_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic1.zhimg.com/80/v2-aaf05ae1946cfa9c15fdb58891b79700_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>操作完成后，就成功了。</p>
 <h2 id="hexo部署到GitHub"><a href="#hexo部署到GitHub" class="headerlink" title="hexo部署到GitHub"></a><strong>hexo部署到GitHub</strong></h2><ol>
 <li>在 blog文件夹下面找到 <strong>_config.yml 文件</strong>，这是属于 你的博客的<strong>配置文件</strong>，<strong>点进入一看就知道了，你可以在这里面直接修改 姓名，内容，等用户的信息</strong>。双击打开它（vscode或者其他文本编辑器，记事本都可以）</li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic1.zhimg.com/80/v2-31040a40d62a9a9e6a5b3837fded4d40_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic1.zhimg.com/80/v2-31040a40d62a9a9e6a5b3837fded4d40_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>先找一下有没有以下这段内容（我也忘记了是我添加的还是自带的），<strong>如果自带则一定是空的，则修改为如下所示，如果没有，则直接复制下面内容到 文档的末尾：</strong></li>
 </ol>
 <p><strong>user表示你的GitHub的用户名</strong></p>
-<pre><code># Deployment
+<pre><code class="hljs"># Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 # deploy:
 #   type: &#39;&#39;
@@ -301,21 +419,21 @@ deploy:
 </code></pre>
 <p><strong>说明：类型是 git，远程 ssh连接是 你的 repo输入项，branch 输入gh-pages。</strong></p>
 <p>另外，找到 第16行（或者直接搜索 url）修改url 为</p>
-<pre><code>https://username.github.io
+<pre><code class="hljs">https://username.github.io
 </code></pre>
 <p>同样username是你的GitHub的用户名。</p>
 <ol>
 <li>完成后，保存文件并且退出，在 git bash中输入以下命令：</li>
 </ol>
 <p><strong>表示安装 git部署命令工具</strong></p>
-<pre><code>npm install hexo-deployer-git --save
+<pre><code class="hljs">npm install hexo-deployer-git --save
 </code></pre>
 <ol>
 <li>最后输入以下三行命令：</li>
 </ol>
 <!---->
 
-<pre><code>hexo clean
+<pre><code class="hljs">hexo clean
 hexo g
 hexo d
 </code></pre>
@@ -324,31 +442,21 @@ hexo d
 <ol>
 <li>输入完成后会出现一堆内容，不用管他<strong>，只要最后内容如下所示，</strong>就表示成功了！</li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic3.zhimg.com/80/v2-a5fe8792b42fb802eb4c22c31244d736_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic3.zhimg.com/80/v2-a5fe8792b42fb802eb4c22c31244d736_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>然后你就可以在</p>
-<pre><code>username.github.io  # https://username.github.io
+<pre><code class="hljs">username.github.io  # https://username.github.io
 </code></pre>
 <p><strong>访问到你的博客了，其中username是你GitHub用户名，这个网站不是离线的，其他人都可以访问到！！！</strong></p>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><strong>常用命令</strong></h2><h3 id="new"><a href="#new" class="headerlink" title="new"></a><strong>new</strong></h3><p>在 根目录中，git bash黑窗口中输入</p>
-<pre><code>hexo new &quot;博客名称&quot;
+<pre><code class="hljs">hexo new &quot;博客名称&quot;
 </code></pre>
 <p>然后打开 blog&#x2F;source&#x2F;_posts&#x2F; 文件夹后，你的 博客名称的md文档就创建好，<strong>直接打开编写即可，可以添加一些标签给这个文章</strong>，如 tags：编程技术</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic3.zhimg.com/80/v2-42fe8cdbafb3193f94bbc9141e0a851a_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
-<h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a><strong>clean</strong></h3><pre><code>$ hexo clean
+<p><img src="https://pic3.zhimg.com/80/v2-42fe8cdbafb3193f94bbc9141e0a851a_720w.webp" srcset="/img/loading.gif" lazyload></p>
+<h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a><strong>clean</strong></h3><pre><code class="hljs">$ hexo clean
 </code></pre>
 <p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p>
 <p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-<h3 id="generate"><a href="#generate" class="headerlink" title="generate"></a><strong>generate</strong></h3><pre><code>$ hexo generate
+<h3 id="generate"><a href="#generate" class="headerlink" title="generate"></a><strong>generate</strong></h3><pre><code class="hljs">$ hexo generate
 </code></pre>
 <p>生成静态文件。</p>
 <table>
@@ -380,9 +488,9 @@ hexo d
 </tr>
 </tbody></table>
 <p>该命令可以简写为</p>
-<pre><code>$ hexo g
+<pre><code class="hljs">$ hexo g
 </code></pre>
-<h3 id="server"><a href="#server" class="headerlink" title="server"></a><strong>server</strong></h3><pre><code>$ hexo server
+<h3 id="server"><a href="#server" class="headerlink" title="server"></a><strong>server</strong></h3><pre><code class="hljs">$ hexo server
 </code></pre>
 <p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
 <table>
@@ -406,9 +514,9 @@ hexo d
 </tr>
 </tbody></table>
 <p>该命令可以简写为：</p>
-<pre><code>$ hexo s
+<pre><code class="hljs">$ hexo s
 </code></pre>
-<h3 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a><strong>deploy</strong></h3><pre><code>$ hexo deploy
+<h3 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a><strong>deploy</strong></h3><pre><code class="hljs">$ hexo deploy
 </code></pre>
 <p><strong>部署网站，构建在GitHub的服务器中。</strong></p>
 <table>
@@ -424,26 +532,21 @@ hexo d
 </tr>
 </tbody></table>
 <p>该命令可以简写为：</p>
-<pre><code>$ hexo d
+<pre><code class="hljs">$ hexo d
 </code></pre>
 <p>命令配合使用，重新构建网站（release）：</p>
-<pre><code>hexo clean
+<pre><code class="hljs">hexo clean
 hexo g -d
 </code></pre>
 <p>访问离线的端口（debug）：</p>
-<pre><code>hexo g
+<pre><code class="hljs">hexo g
 hexo s
 </code></pre>
 <h2 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a><strong>添加插件</strong></h2><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a><strong>主题</strong></h3><p>hexo提供了非常多的主题模板，在hexo的网站里往下滑，点击<strong>探索主题</strong>即可。</p>
 <ol>
 <li>选择某一个主题，然后可以点击 中间是<strong>预览的效果</strong>，点击蓝色的名字是 该<strong>主题的GitHub的下载地址</strong></li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic1.zhimg.com/80/v2-2a34de1052b80ceff94db874dca4fa0c_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic1.zhimg.com/80/v2-2a34de1052b80ceff94db874dca4fa0c_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li><p>我的<strong>主题是 next</strong>，next是一款非常简洁舒服的主题，并且可支持的插件非常多，功能也很强大，可以直接搜索next，然后点击 GitHub的地址，进入下载</p>
 </li>
@@ -452,7 +555,7 @@ hexo s
 </ol>
 <!---->
 
-<pre><code>git clone https://github.com/next-theme/hexo-theme-next themes/next
+<pre><code class="hljs">git clone https://github.com/next-theme/hexo-theme-next themes/next
 </code></pre>
 <ol>
 <li><p>下载完成之后，在 blog文件夹（即根目录）下找到 <strong>themes文件夹，这个文件夹里面存放你下载的主题文件</strong>，可以看到next主题又再次包含一个文件夹，其中包含了next 主题的配置信息\</p>
@@ -460,85 +563,54 @@ hexo s
 <li><p>修改blog的主题：首先返回<strong>blog根目录中，打开 _config.yml 文件</strong>（建议备份一份，直接复制即可），然后在 _config.yml 中<strong>找到 theme选项</strong>（如果你使用vscode，则直接 ctrl+h搜索即可，否则就自己往下滑），然后把 <strong>theme 上输入 next，表示使用的主题是next</strong>（使用其他主题也是如此）\</p>
 </li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic4.zhimg.com/80/v2-70a0224b42907b014a4abb4639046a8f_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic4.zhimg.com/80/v2-70a0224b42907b014a4abb4639046a8f_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>之后就成功！输入 localhost:4000 或者 hexo g， hexo d，然后输入 <a href="https://link.zhihu.com/?target=http://username.github.io">http://username.github.io</a>， 离线或者在线都可以看到设置的next的主题，具体效果自己查看吧！</li>
 </ol>
 <h3 id="博客基本信息"><a href="#博客基本信息" class="headerlink" title="博客基本信息"></a><strong>博客基本信息</strong></h3><p>修改 博客的标题，副标题，描述，等等基本信息。。。</p>
 <p>在 blog根目录下打开 _config.yml 配置文件，直接修改以下信息即可（看不懂英文的直接有道云翻译即可）</p>
 <p>注意，语言要改成 zh-CN即中国，其他的自己随便改改</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic3.zhimg.com/80/v2-1d51028e79f3031ae4a259e807766f02_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic3.zhimg.com/80/v2-1d51028e79f3031ae4a259e807766f02_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <h3 id="创建新的菜单"><a href="#创建新的菜单" class="headerlink" title="创建新的菜单"></a><strong>创建新的菜单</strong></h3><p><strong>打开 themes 的 next 的 _config.yml ，我们此时打开的是主题的配置文件，不是根目录的。</strong></p>
 <p>找到第118行或者 搜索menu，即可看到：这里其实就是我们的博客菜单选项。在一开始我们只有home和 archives是开着的，<strong>如果你想添加一个 tags或者about菜单该如何操作呢？</strong></p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic3.zhimg.com/80/v2-b055c28787ccb765b33d5f45fdbaca3a_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic3.zhimg.com/80/v2-b055c28787ccb765b33d5f45fdbaca3a_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>首先在 blog的根目录中打开 git bash黑窗口，输入以下的命令：</li>
 </ol>
 <!---->
 
-<pre><code>hexo new page tags  # tags可以是其他的
+<pre><code class="hljs">hexo new page tags  # tags可以是其他的
 </code></pre>
 <ol>
 <li><strong>然后在这个 _config 的menu中把 tags这一项取消注释</strong>，然后重新构建：</li>
 </ol>
 <!---->
 
-<pre><code>hexo g
+<pre><code class="hljs">hexo g
 hexo s
 </code></pre>
 <ol>
 <li>在localhost：4000中 看看效果：</li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic1.zhimg.com/80/v2-4dfb2460f9868aa482c9685f46cbcc28_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic1.zhimg.com/80/v2-4dfb2460f9868aa482c9685f46cbcc28_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>添加完成之后，<strong>我们在 blog根目录中打开 source文件夹，即可看到我们的菜单文件夹， tags，打开后，它其实就是一个 md文档！你可以自己在md文档上编辑，然后重新构建看看效果！</strong></p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic4.zhimg.com/80/v2-0ead38f8c03cc0cddc9d1b4c5c566a9f_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic4.zhimg.com/80/v2-0ead38f8c03cc0cddc9d1b4c5c566a9f_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p>同理我们可以<strong>自己创建 菜单，输入 hexo new page xxx</strong>，然后在 <strong>主题的config_yml 的menu中按照其他的格式添加即可 。</strong></p>
 <h3 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a><strong>添加搜索功能</strong></h3><p>打开博客的<strong>搜索文章的 功能</strong></p>
 <p>下载<strong>搜索插件</strong>：</p>
 <p>git bash黑窗口中输入：</p>
-<pre><code>npm install hexo-generator-searchdb
+<pre><code class="hljs">npm install hexo-generator-searchdb
 </code></pre>
 <ol>
 <li>主题 的 _config 配置文件中找到 <strong>local_search</strong>，下面的 <strong>enable输入true即可。</strong></li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic3.zhimg.com/80/v2-af2521c853a03163dd59201003f82e2e_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
-<p>EDLAQ7AEM9AWD49FYXKPX.png</p>
+<p><img src="https://pic3.zhimg.com/80/v2-af2521c853a03163dd59201003f82e2e_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>在根目录的 _config.yml 文件中 的末尾添加下面的内容：（选项的内容可以适当修改）</li>
 </ol>
 <!---->
 
-<pre><code># hexo-generator-searchdb
+<pre><code class="hljs"># hexo-generator-searchdb
 search:
   path: search.xml
   field: post
@@ -546,40 +618,25 @@ search:
   limit: 10
 </code></pre>
 <p>重新构建后，即可看到效果：</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic3.zhimg.com/80/v2-0bd18cb7097efe79d0539fe8555ba3e2_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic3.zhimg.com/80/v2-0bd18cb7097efe79d0539fe8555ba3e2_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <h3 id="添加阅读时间字数提示"><a href="#添加阅读时间字数提示" class="headerlink" title="添加阅读时间字数提示"></a><strong>添加阅读时间字数提示</strong></h3><p>效果如图：</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic3.zhimg.com/80/v2-fb66802168300598aa2b8a49b009aeae_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic3.zhimg.com/80/v2-fb66802168300598aa2b8a49b009aeae_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>git 黑窗口中输入以下命令：</li>
 </ol>
 <!---->
 
-<pre><code>npm install hexo-symbols-count-time
+<pre><code class="hljs">npm install hexo-symbols-count-time
 </code></pre>
 <ol>
 <li><strong>在blog的根目录的 _config中 复制下面这段话到末尾</strong></li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: false</span><br><span class="line">  awl: 2    </span><br><span class="line">  wpm: 275</span><br><span class="line">  suffix: &quot;mins.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">symbols_count_time:</span><br>  <span class="hljs-attr">symbols:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">time:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">total_symbols:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">total_time:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">exclude_codeblock:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">awl:</span> <span class="hljs-number">2</span>    <br>  <span class="hljs-attr">wpm:</span> <span class="hljs-number">275</span><br>  <span class="hljs-attr">suffix:</span> <span class="hljs-string">&quot;mins.&quot;</span><br><br></code></pre></td></tr></table></figure>
 
 <ol>
 <li>在 <strong>主题的 config文件中找到，并且 输入 true即可，效果可以自行查看。</strong></li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic2.zhimg.com/80/v2-cdfbb807e2091b4bebcbc65435e1d575_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic2.zhimg.com/80/v2-cdfbb807e2091b4bebcbc65435e1d575_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <h3 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a><strong>打赏功能</strong></h3><p>在 主题的 config中找到如下的 <strong>raward功能</strong></p>
 <ol>
 <li><p>enable选择打开，comment输入文字</p>
@@ -587,31 +644,16 @@ search:
 <li><p>在缀主题的images文件夹中把你的<strong>付款码的图片放到 &#x2F;blog &#x2F;themes &#x2F;next &#x2F;source &#x2F;images&#x2F; 中</strong>，它会按照这个路径寻找图片</p>
 </li>
 </ol>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic1.zhimg.com/80/v2-2a62369e06f23d62cdfdc930c15e6938_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic1.zhimg.com/80/v2-2a62369e06f23d62cdfdc930c15e6938_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <p><strong>可以发现 这个images文件夹里面的图片都是可以修改的，找到合适的地点，然后更改你的 图片即可换成你想要的图片了。</strong></p>
 <h3 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a><strong>切换主题</strong></h3><p>在 主题的config文件夹中找到这个地方，<strong>直接注释或者取消注释即可</strong></p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic2.zhimg.com/80/v2-75bd93dc2ebf1aef21ddbda5a8e75199_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic2.zhimg.com/80/v2-75bd93dc2ebf1aef21ddbda5a8e75199_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <h3 id="添加不蒜子统计"><a href="#添加不蒜子统计" class="headerlink" title="添加不蒜子统计"></a><strong>添加不蒜子统计</strong></h3><p>在主题的config文件中找到这个地方，直接enable输入true即可。它可以帮助我们<strong>统计网站的观看人数</strong></p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic1.zhimg.com/80/v2-ab686a3a0a95f74645bebc70e7d517a4_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic1.zhimg.com/80/v2-ab686a3a0a95f74645bebc70e7d517a4_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <h3 id="添加百度统计"><a href="#添加百度统计" class="headerlink" title="添加百度统计"></a><strong>添加百度统计</strong></h3><p><a href="https://link.zhihu.com/?target=https://blog.csdn.net/weixin_42619772/article/details/123273163">为hexo的next主题添加百度统计功能，</a></p>
 <h3 id="博客头像"><a href="#博客头像" class="headerlink" title="博客头像"></a><strong>博客头像</strong></h3><p>在 主题的 配置文件中搜索：avator</p>
 <p>在主题的 images文件夹中放入你的图片，然后填写路径即可。</p>
-<pre><code># Sidebar Avatar
+<pre><code class="hljs"># Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
   url: /images/avatar.jpg
@@ -630,7 +672,7 @@ avatar:
 </ul>
 <hr>
 <h3 id="添加侧边栏社交图片"><a href="#添加侧边栏社交图片" class="headerlink" title="添加侧边栏社交图片"></a><strong>添加侧边栏社交图片</strong></h3><p>在主题的 配置文件中搜索<strong>social</strong> 修改即可：</p>
-<pre><code>social:
+<pre><code class="hljs">social:
   GitHub: https://github.com/luumod || fab fa-github
   E-Mail: mailto:1173012900@qq.com || fa fa-envelope
 //以下可以直接取消注释，然后在后面添加图标
@@ -646,10 +688,10 @@ avatar:
 <p>注意：图标的设置可以直接访问这里：<a href="https://link.zhihu.com/?target=https://fontawesome.dashgame.com/">font Awesome</a> 直接搜索想要的图标然后复制粘贴即可。</p>
 <hr>
 <h3 id="添加RSS订阅"><a href="#添加RSS订阅" class="headerlink" title="添加RSS订阅"></a><strong>添加RSS订阅</strong></h3><p>首先执行命令</p>
-<pre><code>npm install hexo-generator-feed --save
+<pre><code class="hljs">npm install hexo-generator-feed --save
 </code></pre>
 <p>打开 Hexo 站点下的 _config.yml ,添加如下配置： 直接在<strong>底部复制粘贴以下内容即可</strong></p>
-<pre><code># feed
+<pre><code class="hljs"># feed
 # Dependencies: https://github.com/hexojs/hexo-generator-feed
 feed:
   type: atom
@@ -670,7 +712,7 @@ feed:
 </ul>
 <!---->
 
-<pre><code># Blog rolls
+<pre><code class="hljs"># Blog rolls
 links_settings:
   icon: fa fa-link
   title: Links
@@ -686,10 +728,10 @@ links:
 <hr>
 <h3 id="文章添加边框阴影效果"><a href="#文章添加边框阴影效果" class="headerlink" title="文章添加边框阴影效果"></a><strong>文章添加边框阴影效果</strong></h3><p><strong>注意：效果不好，建议弃用</strong></p>
 <p>参加我的路径：</p>
-<pre><code>F:\hexo\blog\themes\next\source\css\_common\components\post
+<pre><code class="hljs">F:\hexo\blog\themes\next\source\css\_common\components\post
 </code></pre>
 <p>找到 <code>post.styl</code>文件，添加下面一段话：</p>
-<pre><code>// 主页文章添加阴影效果
+<pre><code class="hljs">// 主页文章添加阴影效果
 .post &#123;
    margin-top: 0px;
    margin-bottom: 60px;
@@ -701,7 +743,7 @@ links:
 <hr>
 <h3 id="修改文章之间的分割线"><a href="#修改文章之间的分割线" class="headerlink" title="修改文章之间的分割线"></a><strong>修改文章之间的分割线</strong></h3><p>同 上一节的文件夹目录 找到 <code>post-eof.styl</code></p>
 <p>其中可以<strong>自行修改 height 和 width</strong></p>
-<pre><code>.post-eof &#123;
+<pre><code class="hljs">.post-eof &#123;
   background: $grey-light;
   height: 3px;
   margin: $post-eof-margin-top auto $post-eof-margin-bottom;
@@ -715,75 +757,70 @@ links:
 </code></pre>
 <hr>
 <h3 id="背景添加线条"><a href="#背景添加线条" class="headerlink" title="背景添加线条"></a><strong>背景添加线条</strong></h3><p>按照我的路径，进入这个文件夹：</p>
-<pre><code>F:\hexo\blog\themes\next\layout\_layout.swig
+<pre><code class="hljs">F:\hexo\blog\themes\next\layout\_layout.swig
 </code></pre>
 <p>在<code>&lt; body&gt; 到 &lt;/ body&gt;</code>中间的任意位置添加下面的代码：位置可以选择在40多行。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.canvas_nest %&#125;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs django"><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">if</span></span> theme.canvas_nest %&#125;</span><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="language-xml"></span><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">endif</span></span> %&#125;</span><span class="language-xml"></span><br><span class="language-xml"></span><br></code></pre></td></tr></table></figure>
 
 <p>然后打开主题的配置文件，复制粘贴进去以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># --------------------------------------------------------------</span><br><span class="line"># background settings</span><br><span class="line"># --------------------------------------------------------------</span><br><span class="line"># add canvas-nest effect</span><br><span class="line"># see detail from https://github.com/hustcc/canvas-nest.js</span><br><span class="line">canvas_nest: true</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># --------------------------------------------------------------</span><br><span class="hljs-comment"># background settings</span><br><span class="hljs-comment"># --------------------------------------------------------------</span><br><span class="hljs-comment"># add canvas-nest effect</span><br><span class="hljs-comment"># see detail from https://github.com/hustcc/canvas-nest.js</span><br><span class="hljs-attr">canvas_nest:</span> <span class="hljs-literal">true</span><br><br></code></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="文章透明度设置"><a href="#文章透明度设置" class="headerlink" title="文章透明度设置"></a><strong>文章透明度设置</strong></h3><p>参考我的目录：</p>
 <p>正文部分：</p>
-<pre><code>F:\hexo\blog\themes\next\source\css\_schemes\Pisces
+<pre><code class="hljs">F:\hexo\blog\themes\next\source\css\_schemes\Pisces
 </code></pre>
 <p>找到 <code>_layout.styl</code> 文件 搜索 <code>.content-wrap</code> 第一行 background后面的内容改为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: rgba(255,255,255,0.7);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">background</span>: rgba(<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0</span>.<span class="hljs-number">7</span>);<br><br></code></pre></td></tr></table></figure>
 
 <p><strong>0.7就是透明度，可以自己设置</strong></p>
 <p>菜单部分： 找到 <code>.header-inner</code> 的background和上面同理</p>
 <hr>
 <h3 id="隐藏底部由…-强力驱动"><a href="#隐藏底部由…-强力驱动" class="headerlink" title="隐藏底部由… 强力驱动"></a><strong>隐藏底部由… 强力驱动</strong></h3><p>参考我的路径，找到 <code>footer.swig</code></p>
-<pre><code>F:\hexo\blog\themes\next\layout\_partials
+<pre><code class="hljs">F:\hexo\blog\themes\next\layout\_partials
 </code></pre>
 <p>找到第 51行，修改为 内容如下： 其实就是在 首尾加了 个 &lt;!- - –&gt;用于隐藏中间的内容，<strong>直接复制我的下面的覆盖即可，或者直接删除</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- &#123;&#123;- __(&#x27;footer.powered&#x27;, next_url(&#x27;https://hexo.io&#x27;, &#x27;Hexo&#x27;, &#123;class: &#x27;theme-link&#x27;&#125;) + &#x27; &amp; &#x27; + next_url(next_site, &#x27;NexT.&#x27; + theme.scheme, &#123;class: &#x27;theme-link&#x27;&#125;)) &#125;&#125; --&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-comment">&lt;!-- </span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">-</span> __(<span class="hljs-name">&#x27;footer.powered&#x27;</span>, next_url(<span class="hljs-name">&#x27;https://hexo.io&#x27;</span>, <span class="hljs-string">&#x27;Hexo&#x27;</span>, &#123;class: <span class="hljs-string">&#x27;theme-link&#x27;</span>&#125;) + <span class="hljs-string">&#x27; &amp; &#x27;</span> + next_url(<span class="hljs-name">next_site</span>, <span class="hljs-string">&#x27;NexT.&#x27;</span> + theme.scheme, &#123;class: <span class="hljs-string">&#x27;theme-link&#x27;</span>&#125;)) &#125;&#125;</span><span class="language-xml"><span class="hljs-comment"> --&gt;</span></span><br><span class="language-xml"></span><br></code></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="添加文章的字数统计"><a href="#添加文章的字数统计" class="headerlink" title="添加文章的字数统计"></a><strong>添加文章的字数统计</strong></h3><p>下载插件：</p>
-<pre><code>npm install hexo-symbols-count-time --save
+<pre><code class="hljs">npm install hexo-symbols-count-time --save
 </code></pre>
 <p>然后打开<strong>根目录</strong>的配置文件，复制粘贴以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  # 每篇文章显示</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  # 文章底部显示</span><br><span class="line">  total_symbols: false  </span><br><span class="line">  total_time: false</span><br><span class="line">  # 是否统计代码块</span><br><span class="line">  exclude_codeblock: false</span><br><span class="line">  awl: 2</span><br><span class="line">  wpm: 275</span><br><span class="line">  suffix: &quot;mins.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">symbols_count_time:</span><br>  <span class="hljs-comment"># 每篇文章显示</span><br>  <span class="hljs-attr">symbols:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">time:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-comment"># 文章底部显示</span><br>  <span class="hljs-attr">total_symbols:</span> <span class="hljs-literal">false</span>  <br>  <span class="hljs-attr">total_time:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-comment"># 是否统计代码块</span><br>  <span class="hljs-attr">exclude_codeblock:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">awl:</span> <span class="hljs-number">2</span><br>  <span class="hljs-attr">wpm:</span> <span class="hljs-number">275</span><br>  <span class="hljs-attr">suffix:</span> <span class="hljs-string">&quot;mins.&quot;</span><br><br></code></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="添加网站运行时间"><a href="#添加网站运行时间" class="headerlink" title="添加网站运行时间"></a><strong>添加网站运行时间</strong></h3><p>打开这个路径的文件：</p>
-<pre><code>F:\hexo\blog\themes\next\layout\_partials\footer.swig
+<pre><code class="hljs">F:\hexo\blog\themes\next\layout\_partials\footer.swig
 </code></pre>
 <p>在<strong>文件的末尾</strong>复制粘贴以下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 网站运行时间的设置 --&gt;</span><br><span class="line">&lt;span id=&quot;timeDate&quot;&gt;载入天数...&lt;/span&gt;</span><br><span class="line">&lt;span id=&quot;times&quot;&gt;载入时分秒...&lt;/span&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var now = new Date();</span><br><span class="line">    function createtime() &#123;</span><br><span class="line">        var grt= new Date(&quot;03/01/2023 10:00:00&quot;); //此处修改你的建站时间或者网站上线时间</span><br><span class="line">        now.setTime(now.getTime()+250);</span><br><span class="line">        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);</span><br><span class="line">        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);</span><br><span class="line">        if(String(hnum).length ==1 )&#123;hnum = &quot;0&quot; + hnum;&#125; minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);</span><br><span class="line">        mnum = Math.floor(minutes); if(String(mnum).length ==1 )&#123;mnum = &quot;0&quot; + mnum;&#125;</span><br><span class="line">        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);</span><br><span class="line">        snum = Math.round(seconds); if(String(snum).length ==1 )&#123;snum = &quot;0&quot; + snum;&#125;</span><br><span class="line">        document.getElementById(&quot;timeDate&quot;).innerHTML = &quot;本站已安全运行 &quot;+dnum+&quot; 天 &quot;;</span><br><span class="line">        document.getElementById(&quot;times&quot;).innerHTML = hnum + &quot; 小时 &quot; + mnum + &quot; 分 &quot; + snum + &quot; 秒.&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">setInterval(&quot;createtime()&quot;,250);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- 网站运行时间的设置 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;timeDate&quot;</span>&gt;</span>载入天数...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;times&quot;</span>&gt;</span>载入时分秒...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();</span><br><span class="language-javascript">    <span class="hljs-keyword">function</span> <span class="hljs-title function_">createtime</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-keyword">var</span> grt= <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">&quot;03/01/2023 10:00:00&quot;</span>); <span class="hljs-comment">//此处修改你的建站时间或者网站上线时间</span></span><br><span class="language-javascript">        now.<span class="hljs-title function_">setTime</span>(now.<span class="hljs-title function_">getTime</span>()+<span class="hljs-number">250</span>);</span><br><span class="language-javascript">        days = (now - grt ) / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span> / <span class="hljs-number">60</span> / <span class="hljs-number">24</span>; dnum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(days);</span><br><span class="language-javascript">        hours = (now - grt ) / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span> / <span class="hljs-number">60</span> - (<span class="hljs-number">24</span> * dnum); hnum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(hours);</span><br><span class="language-javascript">        <span class="hljs-keyword">if</span>(<span class="hljs-title class_">String</span>(hnum).<span class="hljs-property">length</span> ==<span class="hljs-number">1</span> )&#123;hnum = <span class="hljs-string">&quot;0&quot;</span> + hnum;&#125; minutes = (now - grt ) / <span class="hljs-number">1000</span> /<span class="hljs-number">60</span> - (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * dnum) - (<span class="hljs-number">60</span> * hnum);</span><br><span class="language-javascript">        mnum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(minutes); <span class="hljs-keyword">if</span>(<span class="hljs-title class_">String</span>(mnum).<span class="hljs-property">length</span> ==<span class="hljs-number">1</span> )&#123;mnum = <span class="hljs-string">&quot;0&quot;</span> + mnum;&#125;</span><br><span class="language-javascript">        seconds = (now - grt ) / <span class="hljs-number">1000</span> - (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * dnum) - (<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * hnum) - (<span class="hljs-number">60</span> * mnum);</span><br><span class="language-javascript">        snum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(seconds); <span class="hljs-keyword">if</span>(<span class="hljs-title class_">String</span>(snum).<span class="hljs-property">length</span> ==<span class="hljs-number">1</span> )&#123;snum = <span class="hljs-string">&quot;0&quot;</span> + snum;&#125;</span><br><span class="language-javascript">        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;timeDate&quot;</span>).<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;本站已安全运行 &quot;</span>+dnum+<span class="hljs-string">&quot; 天 &quot;</span>;</span><br><span class="language-javascript">        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;times&quot;</span>).<span class="hljs-property">innerHTML</span> = hnum + <span class="hljs-string">&quot; 小时 &quot;</span> + mnum + <span class="hljs-string">&quot; 分 &quot;</span> + snum + <span class="hljs-string">&quot; 秒.&quot;</span>;</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript"><span class="hljs-built_in">setInterval</span>(<span class="hljs-string">&quot;createtime()&quot;</span>,<span class="hljs-number">250</span>);</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
 
 <p>即可在网页的页脚显示网站已经运行了多长时间</p>
 <p>效果如下:</p>
-<p>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://pic4.zhimg.com/80/v2-c4e78830411dfbdab798328210ceaf3f_720w.webp" class="lazyload-img">
-        </sapn>
-      </p>
+<p><img src="https://pic4.zhimg.com/80/v2-c4e78830411dfbdab798328210ceaf3f_720w.webp" srcset="/img/loading.gif" lazyload></p>
 <hr>
 <h3 id="添加页面顶部加载条"><a href="#添加页面顶部加载条" class="headerlink" title="添加页面顶部加载条"></a><strong>添加页面顶部加载条</strong></h3><p>第一步：</p>
-<pre><code>$ cd themes/next
+<pre><code class="hljs">$ cd themes/next
 $ ls
 _config.yml  crowdin.yml  docs  gulpfile.js  languages  layout  LICENSE.md  package.json  README.md  scripts  source
 </code></pre>
 <p>第二步：</p>
-<pre><code>$ git clone https://github.com/theme-next/theme-next-pace source/lib/pace
+<pre><code class="hljs">$ git clone https://github.com/theme-next/theme-next-pace source/lib/pace
 </code></pre>
 <p>第三步：</p>
 <p>打开next主题配置文件，然后搜索<code>pace</code> 修改为true即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pace:</span><br><span class="line">  enable: true</span><br><span class="line">  # Themes list:</span><br><span class="line">  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple</span><br><span class="line">  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal</span><br><span class="line">  theme: minimal</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs coq">pace:<br>  enable: true<br>  # Themes list:<br>  # big-counter | <span class="hljs-type">bounce</span> | <span class="hljs-type">barber</span>-shop | <span class="hljs-type">center</span>-atom | <span class="hljs-type">center</span>-circle | <span class="hljs-type">center</span>-radar | <span class="hljs-type">center</span>-<span class="hljs-built_in">simple</span><br>  # corner-indicator | <span class="hljs-type">fill</span>-<span class="hljs-built_in">left</span> | <span class="hljs-type">flat</span>-<span class="hljs-built_in">top</span> | <span class="hljs-type">flash</span> | <span class="hljs-type">loading</span>-bar | <span class="hljs-type">mac</span>-osx | <span class="hljs-type">material</span> | <span class="hljs-type">minimal</span><br>  theme: minimal<br><br></code></pre></td></tr></table></figure>
 
 <p>这边推荐选择theme的主题为minimal即可，别的都不好看。</p>
 <hr>
 <h3 id="右上角Github图标"><a href="#右上角Github图标" class="headerlink" title="右上角Github图标"></a><strong>右上角Github图标</strong></h3><p>直接在主题配置文件中搜索：<code>github_banner</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># `Follow me on GitHub` banner in the top-right corner.</span><br><span class="line">github_banner:</span><br><span class="line">  enable: true</span><br><span class="line">  permalink: https://github.com/luumod</span><br><span class="line">  title: Follow me on GitHub</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># `Follow me on GitHub` banner in the top-right corner.</span><br><span class="hljs-attr">github_banner:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">permalink:</span> <span class="hljs-string">https://github.com/luumod</span><br>  <span class="hljs-attr">title:</span> <span class="hljs-string">Follow</span> <span class="hljs-string">me</span> <span class="hljs-string">on</span> <span class="hljs-string">GitHub</span><br><br></code></pre></td></tr></table></figure>
 
 <p>然后修改内容即可。</p>
 <hr>
 <h3 id="文末尾版权声明"><a href="#文末尾版权声明" class="headerlink" title="文末尾版权声明"></a><strong>文末尾版权声明</strong></h3><p><strong>主题配置文件</strong>中直接搜索并且修改以下内容即可：</p>
-<pre><code>creative_commons:
+<pre><code class="hljs">creative_commons:
   license: by-nc-sa
   sidebar: true
   post: true
@@ -791,114 +828,338 @@ _config.yml  crowdin.yml  docs  gulpfile.js  languages  layout  LICENSE.md  pack
 </code></pre>
 <p>————by：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/qian-shi-29-55">Yuleo</a>（知乎）</p>
 
-        </div>
-      </div>
-      <div class="post-placeholder post-toc-container">
-        <!-- toc -->
-        
-          <!-- tocbot -->
-<nav class="post-toc toc"></nav>
-
-        
-      </div>
-   </div>
-
-    <!-- 评论 -->
-    
-    <div class="bottom-comments-outer">
-      <div class="bottom-comments-inner common-typographic">
-        <h2 class="comment-title">评论</h2>
-        <!-- valine -->
-        
-        <!-- Gitalk -->
-        
-        <!-- livere -->
-        
-        
-        </div>
-      </div>
-    
-  </div>
-</article>
-<!-- tocbot begin -->
-
-<script src="/lib/tocbot/tocbot.min.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-        tocbot.init({
-            // Where to render the table of contents.
-            tocSelector: '.post-toc',
-            // Where to grab the headings to build the table of contents.
-            contentSelector: '.post-content',
-            // Which headings to grab inside of the contentSelector element.
-            headingSelector: 'h1, h2, h3',
-            // For headings inside relative or absolute positioned containers within content.
-            hasInnerContainers: true,
-        });
-    });
-
-</script>
-<!-- tocbot end -->
-
-  </div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
 </div>
 
-<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
 
-  <div class="footer-outer animate__animated  animate__fadeInUp">
-    <div class="footer-inner">
-        <div class="footer-text">
-            <p>Power by <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a> Theme by <a target="_blank" rel="noopener" href="https://github.com/FuShaoLei/hexo-theme-white">White</a></p>
+              
+  
 
-        </div>
-        <div class="footer-contact">
-            <ul class="footer-ul">
-                
-                <li class="footer-li">
-                    <a href="https://github.com/dfwuyi" target="_blank">
-                        <i class="ri-github-line"></i>
-                    </a>
-                </li>
-                
-                <li class="footer-li">
-                    <a href="mailto:dfwuyi@gmail.com" target="_blank">
-                        <i class="ri-mail-line"></i>
-                    </a>
-                </li>
-                
-                <li class="footer-li">
-                    <a href="https://music.163.com/" target="_blank">
-                        <i class="ri-netease-cloud-music-line"></i>
-                    </a>
-                </li>
-                
-                <li class="footer-li">
-                    <a href="https://bilibili.com/" target="_blank">
-                        <i class="ri-bilibili-line"></i>
-                    </a>
-                </li>
-                
-                <li class="footer-li">
-                    <a href="https://youtube.com/" target="_blank">
-                        <i class="ri-youtube-line"></i>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Hexo+Next主题搭建个人博客+优化全过程</div>
+      <div>http://dfwuyi.github.io/2024/06/07/Hexo-Next主题搭建个人博客-优化全过程/</div>
     </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>dfwuyi</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年6月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/06/07/%E5%9D%90%E9%A3%9E%E6%9C%BA%E6%80%8E%E4%B9%88%E8%A3%85%E9%80%BC%EF%BC%9F/" title="坐飞机怎么装逼？">
+                        <span class="hidden-mobile">坐飞机怎么装逼？</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
 </div>
 
 
 
 
 
-
-<script src="/js/white.js"></script>
-
+  
 
 
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
